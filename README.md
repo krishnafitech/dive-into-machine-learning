@@ -2,6 +2,10 @@
 
 ----
 
+## WhatsApp Collections MVP
+
+A new FastAPI backend lives in [`backend/`](backend/README.md). It ingests invoice CSVs, schedules WhatsApp-ready reminders, captures promise-to-pay responses, and reconciles bank statements for SMEs. Follow the backend README for installation and usage instructions.
+
 ### Initiatives
 
 Before we [dive in](#dive-into-machine-learning), here are some notable projects and initiatives that might interest you as well.
