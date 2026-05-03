@@ -441,3 +441,31 @@ Here are some other guides to learning Machine Learning.
 * **2022:** [_Machine Learning with PyTorch and Scikit-Learn_ by Sebastian Raschka, Yuxi (Hayden) Liu, and Vahid Mirjalili](https://github.com/rasbt/machine-learning-book)
 
 [(↑ Back to top)](#dive-into-machine-learning)
+
+## Workday vs Adaptive balance comparison tool
+
+Use `compare_balances.py` to compare Workday trial balance exports with Adaptive balance sheet exports.
+
+### Supported input
+- CSV (`.csv`)
+- Excel (`.xlsx`, `.xls`)
+
+Both files must include these columns (case-insensitive):
+- `company`
+- `period`
+- `account`
+- `amount`
+
+### What the tool checks
+- Missing accounts in Workday and in Adaptive
+- Duplicate rows (same company + period + account)
+- Sign differences between matched amounts
+- Variance by account (`workday - adaptive`)
+
+### Run
+
+```bash
+python compare_balances.py --workday workday.csv --adaptive adaptive.csv --output balance_comparison.xlsx
+```
+
+The tool outputs a multi-sheet Excel file containing aggregated balances, detailed comparison results, and exceptions.
